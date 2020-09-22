@@ -1,0 +1,153 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <h3 class="center">Create User</h3>
+    <form
+      class="container-fluid"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+    >
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          [(ngModel)]="user.username"
+          required
+          name="username"
+          #username="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && username.invalid"
+        >
+          Username is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstname">Firstname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstname"
+          [(ngModel)]="user.firstname"
+          required
+          name="firstname"
+          #firstname="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && firstname.invalid"
+        >
+          Firstname is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          [(ngModel)]="user.lastname"
+          required
+          #lastname="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && lastname.invalid"
+        >
+          Latname is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="example@example.com"
+          [(ngModel)]="user.email"
+          required
+          #email="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && email.invalid"
+        >
+          email is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="employeeid">Employee ID</label>
+        <input
+          type="text"
+          class="form-control"
+          name="employeeId"
+          id="employeeid"
+          [(ngModel)]="user.employeeId"
+          #employeeId="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="customerid">Customer Id</label>
+        <input
+          type="text"
+          name="customerId"
+          class="form-control"
+          id="customerid"
+          [(ngModel)]="user.customerId"
+          #customerId="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="text"
+          name="password"
+          class="form-control"
+          id="password"
+          required
+          [(ngModel)]="user.password"
+          #password="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && password.invalid"
+        >
+          Password is required!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword"> Confirm Password</label>
+        <input
+          type="text"
+          name="confirmPassword"
+          class="form-control"
+          id="confirmPassword"
+          required
+          [(ngModel)]="user.confirmPassword"
+          #confirmPassword="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && confirmPassword.invalid"
+        >
+          Invalid
+        </div>
+      </div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Create
+      </button>
+    </form>
+  </div>
+</div>
